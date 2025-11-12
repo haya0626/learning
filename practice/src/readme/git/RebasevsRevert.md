@@ -229,19 +229,19 @@ E, F, G はローカルで作ったコミット
 
 A, B, C, D は元からあった履歴
 
-- **git rebase -i HEAD~3 の場合**
+- **`git rebase -i HEAD~3` の場合**
 
   - 対象は E, F, G のみ（ローカルの直近 3 つを指定したため）
   - A, B, C, D は触れない
   - 変更できるのは「自分が作った 3 つ」だけ
 
-- **git rebase -i main の場合**
+- **`git rebase -i main` の場合 (補足)**
 
   - 対象は D ,E, F, G で main の最後のコミットも対象になる
   - feature の全履歴を main の上に積み直す rebase
   - -i 付きなので 途中のコミットがすべて編集対象になる
 
-- **git rebase -i --root の場合(補足)**
+- **`git rebase -i --root` の場合 (補足)**
 
   - リポジトリ最初のコミットから全部が対象(A, B, C, D ,E, F, G)
 
