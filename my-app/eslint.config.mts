@@ -4,6 +4,8 @@ import tseslint from "typescript-eslint";
 import react from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
 import { defineConfig } from "eslint/config";
+import reactHooks from "eslint-plugin-react-hooks";
+import next from "@next/eslint-plugin-next";
 
 export default defineConfig([
   // JS / TS 共通の基本設定
@@ -14,6 +16,12 @@ export default defineConfig([
 
   // React 推奨
   react.configs.flat.recommended,
+
+  // Hooks のルール
+  reactHooks.configs.recommended,
+
+  // Core Web Vitals を意識した ESLint ルール集
+  next.configs["core-web-vitals"],
 
   // 独自のルール
   {
