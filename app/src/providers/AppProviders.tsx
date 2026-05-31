@@ -1,6 +1,6 @@
 "use client";
 
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider as JotaiProvider } from "jotai";
 import { useState } from "react";
@@ -21,7 +21,6 @@ export function AppProviders({ children }: AppProvidersProps) {
         <JotaiProvider>
             <QueryClientProvider client={queryClient}>
                 <ThemeProvider theme={theme}>
-                    <CssBaseline />
                     {children}
                 </ThemeProvider>
             </QueryClientProvider>

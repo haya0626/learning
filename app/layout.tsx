@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { AppProviders } from "./src/providers/AppProviders";
+import "./src/styles/globals.css";
+
 /**
  * HTML の<title>と<meta>を、Next.js が自動定義（Metadata API）
  */
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
  * - アプリ全体で使う Provider を適用
  * - 各画面の page.tsx を children として表示する
  */
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
