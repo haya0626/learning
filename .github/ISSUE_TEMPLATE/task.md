@@ -1,3 +1,11 @@
+---
+name: 作業タスク
+about: 個人開発の作業チケット
+title: "[Task] "
+labels: task
+assignees: ""
+---
+
 ## 作業内容
 
 概要を記載します
