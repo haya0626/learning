@@ -57,13 +57,6 @@ function LoginPage() {
                 <button className="w-full bg-red-600 text-white py-2 font-bold" onClick={handleLogin}>
                     Login
                 </button>
-
-                <p className="text-gray-400 text-sm text-center">
-                    初めてご利用ですか？&emsp;
-                    <a href="#" className="underline text-white">
-                        新規登録はこちら
-                    </a>
-                </p>
             </div>
         </div>
     );
