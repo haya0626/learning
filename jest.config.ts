@@ -2,24 +2,27 @@ import type { Config } from "jest";
 import nextJest from "next/jest.js";
 
 const createJestConfig = nextJest({
-  dir: "./",
+  dir: "./", // next.config.ts がある場所を指定
 });
 
 const config: Config = {
-  testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-  collectCoverage: true,
-  collectCoverageFrom: [
-    "!src/**/*.d.ts",
-    "!src/app/layout.tsx",
-    "!src/app/page.tsx",
-  ],
+  testEnvironment: "jsdom", // ブラウザ環境(DOM)を模擬してテスト実行
+
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"], // テスト実行前の共通設定ファイル
+
+  collectCoverage: false, // --coverageの時だけ集計する
+
+  collectCoverageFrom: ["src/**/*.{ts,tsx}", "!src/**/*.d.ts"], // Coverageの対象指定
+
   coverageThreshold: {
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      branches: 100, // 分岐(if/switch等)のCoverage基準
+
+      functions: 100, // 関数のCoverage基準
+
+      lines: 100, // 行Coverage基準
+
+      statements: 100, // 文Coverage基準
     },
   },
 };
