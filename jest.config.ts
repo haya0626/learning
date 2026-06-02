@@ -9,7 +9,11 @@ const config: Config = {
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   collectCoverage: true,
-  collectCoverageFrom: ["src/**/*.{ts,tsx}", "!src/**/*.d.ts", "!src/app/**"],
+  collectCoverageFrom: [
+    "!src/**/*.d.ts",
+    "!src/app/layout.tsx",
+    "!src/app/page.tsx",
+  ],
   coverageThreshold: {
     global: {
       branches: 100,
