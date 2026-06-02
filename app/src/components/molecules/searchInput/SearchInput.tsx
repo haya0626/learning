@@ -13,7 +13,6 @@ type SearchInputProps<T extends FieldValues> = {
     id: string;
     name: Path<T>;
     control: Control<T>;
-    label?: string;
     onSearch: () => void;
 };
 
