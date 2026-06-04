@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AppProviders } from "./src/providers/AppProviders";
 import "./src/styles/globals.css";
+import { AppShell } from "./src/components/layouts/AppShell";
 
 /**
  * HTML の<title>と<meta>を、Next.js が自動定義（Metadata API）
@@ -28,7 +29,9 @@ export default function Layout({
   return (
     <html lang="ja">
       <body>
-        <AppProviders>{children}</AppProviders>
+        <AppShell title="業務管理画面">
+          <AppProviders>{children}</AppProviders>
+        </AppShell>
       </body>
     </html>
   );
