@@ -1,7 +1,10 @@
-import { FormControlLabel, MenuItem, Radio, RadioGroup, TextField } from "@mui/material";
+"use client";
+
+import { Button, FormControlLabel, MenuItem, Radio, RadioGroup, TextField } from "@mui/material";
 import { COL_SPAN, COL_START, GridItem } from "../../../layouts/GridItem";
 import { FormItem } from "../../../atoms/FormItem";
 import { Grid } from "../../../layouts/Grid";
+import { SPACING } from "@/app/src/constants/Spacing";
 
 export default function Sample1Header() {
     return (
@@ -70,6 +73,17 @@ export default function Sample1Header() {
                     </FormItem>
                 </GridItem>
             </Grid>
+
+            <Button
+                type="submit"
+                variant="contained"
+                onClick={() => { }}
+                sx={{
+                    mt: `${SPACING.SEARCH}px`,
+                }}
+            >
+                検索
+            </Button>
         </>
     );
 }
