@@ -37,8 +37,7 @@ export const FormItem = ({
                 {label}
             </label>
 
-            {/**flex-1 : 利用可能な余白をすべて埋める*/}
-            <div className="flex-1">
+            <div className="w-[220px]">
                 {children}
             </div>
         </div>

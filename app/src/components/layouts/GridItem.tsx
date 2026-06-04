@@ -1,43 +1,40 @@
 import { ReactNode } from "react";
 
-type ColumnsPerRow = 1 | 2 | 3;
+export const COL_SPAN = {
+    M: 8
+} as const;
+
+export const COL_START = {
+    LEFT: 1,
+    RIGHT: 13,
+} as const;
+
 
 type GridItemProps = {
     children: ReactNode;
     /**
-     * 1行に並べる要素数
+     * 要素の開始位置
      */
-    columnsPerRow?: ColumnsPerRow;
+    colStart: 1 | 13;
     /**
-     * 縦方向の使用行数
+     * 要素の幅
      */
-    rowSpan?: number;
-};
-
-const GRID_COLUMNS = 24;
-
-const getGridColumnSpan = (columnsPerRow: ColumnsPerRow) => {
-    return GRID_COLUMNS / columnsPerRow;
+    colSpan: 8;
 };
 
 /**
  * Grid内の配置要素
- *
- * @param columnsPerRow 1行に並べる要素数
- * @param rowSpan       縦方向の使用行数
  */
 export function GridItem({
     children,
-    columnsPerRow = 1,
-    rowSpan = 1,
+    colStart = COL_START.LEFT,
+    colSpan = COL_SPAN.M,
 }: GridItemProps) {
-    const gridColumnSpan = getGridColumnSpan(columnsPerRow);
 
     return (
         <div
             style={{
-                gridColumn: `span ${gridColumnSpan}`,
-                gridRow: `span ${rowSpan}`,
+                gridColumn: `${colStart} / span ${colSpan}`
             }}
         >
             {children}

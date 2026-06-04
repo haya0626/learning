@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
 
+const COLUMNS = 24
+const GAP = 2
+const ROWHEIGHT = 45
+
+
 type GridProps = {
     children: ReactNode;
-    columns?: number;
-    gap?: number;
-    rowHeight?: number;
 };
 
 /**
@@ -16,17 +18,14 @@ type GridProps = {
  */
 export function Grid({
     children,
-    columns = 24,
-    gap = 2,
-    rowHeight = 56,
 }: GridProps) {
     return (
         <div
             className="grid w-full"
             style={{
-                gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-                gridAutoRows: `${rowHeight}px`,
-                gap: `${gap * 8}px`,
+                gridTemplateColumns: `repeat(${COLUMNS}, minmax(0, 1fr))`,
+                gridAutoRows: `${ROWHEIGHT}px`,
+                gap: `${GAP * 8}px`,
             }}
         >
             {children}
