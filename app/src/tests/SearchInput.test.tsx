@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { SearchInput } from "./SearchInput";
+import { SearchInput } from "../components/molecules/searchInput/SearchInput";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
